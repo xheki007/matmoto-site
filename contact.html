@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="sq">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kontakt • MATMOTO</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="MATMOTO Home">MATMOTO</a>
+
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="models.html">Modelet</a>
+      <a href="gallery.html">Galeria</a>
+      <a href="offers.html">Ofertat</a>
+      <a href="parts.html">Pjesë</a>
+      <a class="is-active" href="contact.html">Kontakt</a>
+    </nav>
+
+    <a class="nav-cta" href="contact.html">Porosit</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="models-head">
+        <h1 class="section-title">Kontakt & Porosi</h1>
+        <p class="section-lead">Na shkruaj për porosi, çmime, stock, ngjyra ose pyetje. Mund të dërgosh edhe lokacionin direkt në WhatsApp.</p>
+      </div>
+
+      <div class="contact-premium-grid">
+
+        <article class="contact-premium-card">
+          <h3>Kontakt i shpejtë</h3>
+
+          <div class="contact-info-list">
+            <div class="contact-info-row">
+              <span>WhatsApp</span>
+              <a target="_blank" rel="noopener" href="https://wa.me/38349344884">+383 49 344 884</a>
+            </div>
+
+            <div class="contact-info-row">
+              <span>Telefon</span>
+              <span>+383 49 344 884</span>
+            </div>
+
+            <div class="contact-info-row">
+              <span>Email</span>
+              <span>leotrim_binaku@hotmail.com</span>
+            </div>
+
+            <div class="contact-info-row">
+              <span>Adresa</span>
+              <span>Rruga e Ulqinit Nr.153, 40000 Mitrovicë</span>
+            </div>
+          </div>
+
+          <div class="hero-actions" style="margin-top:16px;">
+            <a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/38349344884">WhatsApp</a>
+            <a class="btn btn-secondary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Mat%20Moto%2C%20Mitrovica">Get Directions</a>
+          </div>
+        </article>
+
+        <article class="contact-premium-card">
+          <h3>Porosi (WhatsApp)</h3>
+
+          <form class="contact-form-premium" id="orderForm" onsubmit="return false;">
+            <div class="contact-form-grid">
+              <input id="orderName" type="text" placeholder="Emri" required>
+              <input id="orderPhone" type="tel" placeholder="Telefoni" required>
+            </div>
+
+            <div class="contact-form-grid">
+              <input id="orderEmail" type="email" placeholder="Email (opsionale)">
+              <select id="orderModel" required>
+                <option value="" selected disabled>Zgjidh modelin</option>
+                <option value="2 rrota">2 rrota</option>
+                <option value="3 rrota">3 rrota</option>
+                <option value="Pjesë / Servis">Pjesë / Servis</option>
+              </select>
+            </div>
+
+            <textarea id="orderMsg" placeholder="Mesazhi (ngjyra, pyetje, kërkesë, pjesë, etj.)"></textarea>
+
+            <label class="contact-check-premium">
+              <input id="shareLocationChk" type="checkbox" checked>
+              Dua të ndaj lokacionin e dorëzimit
+            </label>
+
+            <div class="hero-actions" style="margin-top:4px;">
+              <button class="btn btn-primary" type="button" onclick="sendLocationOrder()">Share Location & Order</button>
+              <button class="btn btn-secondary" type="button" onclick="sendOrderNoLocation()">Send Order (no location)</button>
+            </div>
+          </form>
+
+          <p class="contact-form-note">Lokacioni merret vetëm pasi përdoruesi klikojnë “Allow”. Punon më mirë kur faqja është online me HTTPS.</p>
+        </article>
+
+      </div>
+
+      <div class="contact-map-box">
+        <div class="contact-map-head">
+          <div>
+            <h3>Lokacioni ynë</h3>
+            <p>Mat Moto • Mitrovicë</p>
+          </div>
+
+          <div class="hero-actions" style="margin:0;">
+            <a class="btn btn-secondary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Mat%20Moto%2C%20Mitrovica">Get Directions</a>
+          </div>
+        </div>
+
+        <div class="contact-map-frame">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d482.3004321115732!2d20.851677308062182!3d42.87024650812988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135345b4715a6df9%3A0xb93cbd86e834282!2sMat%20Moto!5e0!3m2!1sen!2s!4v1772747447915!5m2!1sen!2s"
+            style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <strong>MATMOTO</strong><br>
+      Electric Mobility • Premium Web<br>
+      © 2026 MATMOTO
+    </div>
+
+    <div>
+      <strong>Adresa</strong><br>
+      Rruga e Ulqinit Nr.153<br>
+      40000 Mitrovicë, Kosovë
+    </div>
+
+    <div>
+      <strong>Kontakt</strong><br>
+      Tel / WhatsApp: +383 49 344 884<br>
+      Email: leotrim_binaku@hotmail.com
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" target="_blank" rel="noopener" href="https://wa.me/38349344884" aria-label="WhatsApp">
+  <span class="wa-dot"></span>
+  <span class="wa-text">
+    <strong>WhatsApp</strong>
+    <span>Porosit tani</span>
+  </span>
+</a>
+
+<script src="assets/js/app.js"></script>
+
+</body>
+</html>

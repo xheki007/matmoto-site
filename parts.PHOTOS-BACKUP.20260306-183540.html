@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="sq">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pjesë • MATMOTO</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="MATMOTO Home">MATMOTO</a>
+
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="models.html">Modelet</a>
+      <a href="gallery.html">Galeria</a>
+      <a href="offers.html">Ofertat</a>
+      <a class="is-active" href="parts.html">Pjesë</a>
+      <a href="contact.html">Kontakt</a>
+    </nav>
+
+    <a class="nav-cta" href="contact.html">Porosit</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="models-head">
+        <h1 class="section-title">Pjesë & Servis</h1>
+        <p class="section-lead">Pjesë rezervë, aksesorë dhe servis bazik për modelet MATMOTO.</p>
+      </div>
+
+      <div class="parts-filter-bar">
+        <button class="parts-filter-btn is-active" type="button" data-filter="all">Të gjitha</button>
+        <button class="parts-filter-btn" type="button" data-filter="battery">Bateri</button>
+        <button class="parts-filter-btn" type="button" data-filter="brakes">Frena</button>
+        <button class="parts-filter-btn" type="button" data-filter="tires">Goma</button>
+        <button class="parts-filter-btn" type="button" data-filter="service">Servis</button>
+        <button class="parts-filter-btn" type="button" data-filter="accessories">Aksesorë</button>
+      </div>
+
+      <div class="parts-grid-premium" id="partsGrid"></div>
+
+      <div class="cta-box" style="margin-top:22px;">
+        <div>
+          <strong>Dërgo foton e pjesës që kërkon</strong><br>
+          <span style="color:rgba(255,255,255,.72);">Na shkruaj në WhatsApp dhe të gjejmë pjesën e saktë ose terminin për servis.</span>
+        </div>
+
+        <div class="hero-actions" style="margin:0;">
+          <a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/38349344884">WhatsApp</a>
+          <a class="btn btn-secondary" href="contact.html">Kontakt</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <strong>MATMOTO</strong><br>
+      Electric Mobility • Premium Web<br>
+      © 2026 MATMOTO
+    </div>
+
+    <div>
+      <strong>Adresa</strong><br>
+      Rruga e Ulqinit Nr.153<br>
+      40000 Mitrovicë, Kosovë
+    </div>
+
+    <div>
+      <strong>Kontakt</strong><br>
+      Tel / WhatsApp: +383 49 344 884<br>
+      Email: leotrim_binaku@hotmail.com
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" target="_blank" rel="noopener" href="https://wa.me/38349344884" aria-label="WhatsApp">
+  <span class="wa-dot"></span>
+  <span class="wa-text">
+    <strong>WhatsApp</strong>
+    <span>Porosit tani</span>
+  </span>
+</a>
+
+<script>
+  const parts = [
+    { cat:"battery", title:"Bateri 72V 32Ah", desc:"Për modelin 2 rrota. Zgjidhje për autonomi më të lartë.", meta:["72V","32Ah","2 rrota"] },
+    { cat:"battery", title:"Bateri standarde", desc:"Variant bazik për përdorim të përditshëm dhe zëvendësim.", meta:["Battery","Standard","Stock"] },
+
+    { cat:"brakes", title:"Pads / Frena", desc:"Për frenim të sigurt dhe mirëmbajtje periodike.", meta:["Pads","Siguri","Servis"] },
+    { cat:"brakes", title:"Disk frenash", desc:"Për zëvendësim kur kërkohet performancë më e mirë në frenim.", meta:["Disk","Frena","Zëvendësim"] },
+
+    { cat:"tires", title:"Goma për 2 rrota", desc:"Për qytet dhe përdorim të përditshëm me stabilitet më të mirë.", meta:["Goma","2 rrota","Qytet"] },
+    { cat:"tires", title:"Goma për 3 rrota", desc:"Të përshtatshme për transport dhe përdorim pune.", meta:["Goma","3 rrota","Transport"] },
+
+    { cat:"service", title:"Servis bazik", desc:"Kontroll i përgjithshëm, frenat, bateria dhe gjendja teknike.", meta:["Servis","Kontroll","Mirëmbajtje"] },
+    { cat:"service", title:"Kontroll baterie", desc:"Diagnozë dhe kontroll i gjendjes së baterisë.", meta:["Battery","Diagnozë","Servis"] },
+
+    { cat:"accessories", title:"Kofano / Box", desc:"Për transport të lehtë dhe përdorim më praktik.", meta:["Box","Transport","Aksesor"] },
+    { cat:"accessories", title:"Aksesorë shtesë", desc:"Pjesë dhe aksesorë për komoditet dhe përdorim më të mirë.", meta:["Aksesorë","Praktik","MATMOTO"] }
+  ];
+
+  const grid = document.getElementById("partsGrid");
+  const filterBtns = Array.from(document.querySelectorAll(".parts-filter-btn"));
+
+  function renderParts(filter){
+    const list = filter === "all" ? parts : parts.filter(i => i.cat === filter);
+
+    grid.innerHTML = list.map(item => `
+      <article class="parts-premium-card" data-cat="${item.cat}">
+        <div class="parts-premium-media">
+          <div class="parts-premium-chip">${item.cat.toUpperCase()}</div>
+        </div>
+
+        <div class="parts-premium-body">
+          <h3>${item.title}</h3>
+          <p>${item.desc}</p>
+
+          <div class="meta">
+            ${item.meta.map(m => `<span class="pill">${m}</span>`).join("")}
+          </div>
+
+          <div class="offer-premium-actions">
+            <a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/38349344884">Pyet në WhatsApp</a>
+            <a class="btn btn-secondary" href="contact.html">Kontakt</a>
+          </div>
+        </div>
+      </article>
+    `).join("");
+  }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filterBtns.forEach(b => b.classList.remove("is-active"));
+      btn.classList.add("is-active");
+      renderParts(btn.dataset.filter || "all");
+    });
+  });
+
+  renderParts("all");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="sq">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>MATMOTO • Electric Mobility</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+
+<body>
+
+<header class="site-header">
+
+<div class="container header-inner">
+
+<a class="brand" href="index.html">
+MATMOTO
+</a>
+
+<nav class="nav">
+
+<a class="is-active" href="index.html">Home</a>
+<a href="models.html">Modelet</a>
+<a href="gallery.html">Galeria</a>
+<a href="offers.html">Ofertat</a>
+<a href="parts.html">Pjesë</a>
+<a href="contact.html">Kontakt</a>
+
+</nav>
+
+<a class="nav-cta" href="contact.html">Porosit</a>
+
+</div>
+
+</header>
+
+
+
+<main>
+
+
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+<div>
+
+<span class="badge">
+Electric • Premium • Ready
+</span>
+
+<h1 class="hero-title">
+MATMOTO Electric Mobility
+</h1>
+
+<p class="hero-subtitle">
+Dy rrota për qytet. Tri rrota për punë. Dizajn premium, përdorim praktik, shërbim i besueshëm.
+</p>
+
+<div class="hero-actions">
+
+<a class="btn btn-primary" href="models.html">
+Shiko modelet
+</a>
+
+<a class="btn btn-secondary" href="offers.html">
+Ofertat
+</a>
+
+</div>
+
+
+<div class="hero-switch">
+
+<button class="switch-btn is-active" id="btn2">
+2 rrota
+</button>
+
+<button class="switch-btn" id="btn3">
+3 rrota
+</button>
+
+</div>
+
+
+
+<ul class="hero-specs">
+
+<li>
+2000W • 45 km/h • deri 100+ km
+</li>
+
+<li>
+Bateria 72V • Garancion 1 vit
+</li>
+
+</ul>
+
+
+</div>
+
+
+
+<div class="hero-media">
+
+<div class="hero-preview">
+
+<div id="heroLabel">
+2 RROTA • Preview
+</div>
+
+<div class="hero-note">
+Foto coming soon
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+Modelet kryesore
+</h2>
+
+<p class="section-subtitle">
+Dy rrota për qytet. Tri rrota për transport.
+</p>
+
+
+
+<div class="models-grid">
+
+
+
+<div class="model-card">
+
+<h3>
+MATMOTO 2R CITY
+</h3>
+
+<p>
+2000W • 45 km/h • deri 70 km
+</p>
+
+</div>
+
+
+
+<div class="model-card">
+
+<h3>
+MATMOTO 2R LONG RANGE
+</h3>
+
+<p>
+2000W • 45 km/h • deri 100+ km
+</p>
+
+</div>
+
+
+
+<div class="model-card">
+
+<h3>
+MATMOTO 3R PASSENGER
+</h3>
+
+<p>
+1800W • 25 km/h
+</p>
+
+</div>
+
+
+
+<div class="model-card">
+
+<h3>
+MATMOTO 3R TRANSPORT
+</h3>
+
+<p>
+OFERTË 1499€
+</p>
+
+</div>
+
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+</main>
+
+
+
+<footer class="site-footer">
+
+<div class="container">
+
+<p>
+MATMOTO
+</p>
+
+<p>
+Electric Mobility • Premium Web
+</p>
+
+<p>
+© 2026 MATMOTO
+</p>
+
+</div>
+
+</footer>
+
+
+
+<script>
+
+const btn2 = document.getElementById("btn2")
+const btn3 = document.getElementById("btn3")
+const label = document.getElementById("heroLabel")
+
+btn2.onclick = () => {
+
+btn2.classList.add("is-active")
+btn3.classList.remove("is-active")
+
+label.innerText = "2 RROTA • Preview"
+
+}
+
+btn3.onclick = () => {
+
+btn3.classList.add("is-active")
+btn2.classList.remove("is-active")
+
+label.innerText = "3 RROTA • Preview"
+
+}
+
+</script>
+
+
+
+</body>
+</html>
