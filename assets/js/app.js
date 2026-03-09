@@ -371,3 +371,61 @@ https://maps.google.com/?q=${lat},${lon}
   };
 
 });
+/* MOBILE NAV TOGGLE */
+document.querySelectorAll(".nav-toggle").forEach(function(btn){
+  const wrap = btn.parentElement;
+  const menu = wrap ? wrap.querySelector(".mobile-nav") : null;
+  if(!menu) return;
+
+  btn.addEventListener("click", function(){
+    const isOpen = menu.classList.toggle("is-open");
+    btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    menu.setAttribute("aria-hidden", isOpen ? "false" : "true");
+  });
+
+  menu.querySelectorAll("a").forEach(function(link){
+    link.addEventListener("click", function(){
+      menu.classList.remove("is-open");
+      btn.setAttribute("aria-expanded", "false");
+      menu.setAttribute("aria-hidden", "true");
+    });
+  });
+});
+/* PREMIUM MOBILE NAV */
+document.querySelectorAll(".nav-toggle").forEach(function(btn){
+  const wrap = btn.parentElement;
+  const menu = wrap ? wrap.querySelector(".mobile-nav") : null;
+  if(!menu) return;
+
+  btn.addEventListener("click", function(){
+    const isOpen = menu.classList.toggle("is-open");
+    btn.classList.toggle("is-open", isOpen);
+    btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    menu.setAttribute("aria-hidden", isOpen ? "false" : "true");
+  });
+
+  menu.querySelectorAll("a").forEach(function(link){
+    link.addEventListener("click", function(){
+      menu.classList.remove("is-open");
+      btn.classList.remove("is-open");
+      btn.setAttribute("aria-expanded", "false");
+      menu.setAttribute("aria-hidden", "true");
+    });
+  });
+});
+
+/* MOBILE HAMBURGER MENU */
+
+const navToggle = document.querySelector(".nav-toggle");
+const mobileNav = document.querySelector(".mobile-nav");
+
+if(navToggle && mobileNav){
+
+  navToggle.addEventListener("click", () => {
+
+    navToggle.classList.toggle("is-open");
+    mobileNav.classList.toggle("is-open");
+
+  });
+
+}
